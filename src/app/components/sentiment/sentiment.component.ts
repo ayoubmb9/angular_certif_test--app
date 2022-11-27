@@ -27,14 +27,12 @@ export class SentimentComponent {
     public readonly stockService : StocksService){}
   
   ngOnInit() {
-    console.log(this.monthsToDisplay)
     this.id = this.route.snapshot.params['id'];
     this.stockService.getStockComp(this.id).subscribe({
       next: (data) => {
         this.title = data.result[0].description;
         this.stockService.getSentiment(this.id).subscribe({
           next: (data) => {
-            console.log(data)
             this.sentiments = data.data;
             this.filterSentiment();
             

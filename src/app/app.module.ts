@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SentimentComponent } from './components/sentiment/sentiment.component';
-import { MonthNamePipe } from './components/month-name.pipe';
+import { MonthNamePipe } from './shared/month-name.pipe';
 
 @NgModule({
   declarations: [

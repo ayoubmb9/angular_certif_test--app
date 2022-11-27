@@ -8,7 +8,7 @@
             <div class="col3">
                 <div>
                     <h1 class="mon-element">{{month | monthName}}</h1>
-                    <div *ngFor="let sentiment of sentiments">
+                    <div *ngFor="let sentiment of sentiments ">
                         <div class="col3" *ngIf="sentiment.month == month">
                             <div>
                                 <p class="mon-element">
