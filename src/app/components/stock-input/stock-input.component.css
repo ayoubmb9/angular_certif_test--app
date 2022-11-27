@@ -1,0 +1,23 @@
+.input-card {
+  margin: 0 auto;
+  width: 40%;
+  margin-bottom: 8px;
+}
+
+.col3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0px;
+}
+
+.stock-card {
+  margin: 0 auto;
+  width: 50%;
+  margin-bottom: 8px;
+}
+
+.example-button-row {
+  display: table-cell;
+  margin-right: 20px;
+}
+

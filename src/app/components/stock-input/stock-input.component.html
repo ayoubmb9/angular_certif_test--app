@@ -1,0 +1,38 @@
+<mat-card class="input-card">
+    <mat-card-header>
+        <mat-card-title> Enter the symbol of a stock (i.e AAPL, TSLA, GOOGL) </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="example-button-row">
+        <input id="stockInput" type="text" [(ngModel)]="value">
+        <button id="trackBtn" (click)="goStock(value)" [disabled]="!(value.length > 0) || !(value.length < 6)" mat-raised-button color="primary">Track Stock</button>
+    </mat-card-content>
+
+</mat-card>
+
+<mat-card class="stock-card" *ngFor="let stock of stocks; let i = index">
+    <mat-card-header>
+        <mat-card-title> {{ stock.description }} </mat-card-title>
+        <mat-card-subtitle>{{ stock.symbol }}</mat-card-subtitle>
+        <button id="remove{stock.symbol}" (click)="onDeleteStock(stock)" mat-raised-button color="primary">X</button>
+    </mat-card-header>
+    <div class="col3">
+        <div>
+            <mat-card-content class="example-button-row">
+                <p>Change today : {{ stock.change }}%</p>
+                <p>Opening price : {{ stock.opPrice | currency}}</p>
+            </mat-card-content>
+        </div>
+        <div>
+            <mat-card-content class="example-button-row">
+                <p>Current price : {{ stock.currPrice | currency}}</p>
+                <p>High price : {{ stock.highPrice | currency}}</p>
+            </mat-card-content>
+        </div>
+        <h1 *ngIf="stock.change >= 0, else elseBlock" style="color:green;">🡹</h1>
+        <ng-template #elseBlock>
+            <h1 style="color:red;">🡻</h1>
+        </ng-template>
+    </div>
+        <button id="sentiment{stock.symbol}"  (click)="onViewStock(stock.symbol)" mat-raised-button> Go to social sentiment details =>
+        </button>
+</mat-card>

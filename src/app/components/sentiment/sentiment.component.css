@@ -1,0 +1,17 @@
+.col3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0px;
+  }
+
+.mon-element {
+  margin: 20px 12px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: inline-block;
+}
+.nom-de-champ {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+ 
