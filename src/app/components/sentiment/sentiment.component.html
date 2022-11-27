@@ -12,12 +12,12 @@
                         <div class="col3" *ngIf="sentiment.month == month">
                             <div>
                                 <p class="mon-element">
-                                    <span class="nom-de-champ">Change : </span>
-                                    <span class="test">{{sentiment.change}}</span>
+                                    <span class="nom-de-champ">Change : &nbsp; </span>
+                                    <span >{{sentiment.change}}</span>
                                 </p>
                                 <p class="mon-element">
-                                    <span class="nom-de-champ">MSPR : </span>
-                                    <span class="test">{{sentiment.mspr}}</span>
+                                    <span class="nom-de-champ">MSPR : &nbsp;</span>
+                                    <span >{{sentiment.mspr | number}}</span>
                                 </p>
                             </div>
                             <div>
