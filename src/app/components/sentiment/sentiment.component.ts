@@ -30,7 +30,7 @@ export class SentimentComponent {
     this.id = this.route.snapshot.params['id'];
     this.stockService.getStockComp(this.id).subscribe({
       next: (data) => {
-        this.title = data.result[0].description;
+        this.title = data.result.filter(item=> item.displaySymbol === this.id)[0].description;
         this.stockService.getSentiment(this.id).subscribe({
           next: (data) => {
             this.sentiments = data.data;

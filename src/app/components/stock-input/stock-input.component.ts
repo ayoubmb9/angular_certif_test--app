@@ -36,7 +36,7 @@ export class StockInputComponent {
     let stockObj = new Stock;
     this.stockService.getStockComp(stock).subscribe({
       next: (data) => {
-        stockObj.description = data.result[0].description;
+        stockObj.description = data.result.filter(item=> item.displaySymbol === stock)[0].description;
         this.stockService.getStock(stock).subscribe({
           next: (data) => {
             stockObj.symbol = stock;

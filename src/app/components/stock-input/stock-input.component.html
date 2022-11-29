@@ -3,7 +3,7 @@
         <mat-card-title> Enter the symbol of a stock (i.e AAPL, TSLA, GOOGL) </mat-card-title>
     </mat-card-header>
     <mat-card-content class="example-button-row">
-        <input id="stockInput" type="text" [(ngModel)]="value">
+        <input id="stockInput" type="text" maxlength="5" [(ngModel)]="value" (ngModelChange)="value = $event.toUpperCase()">
         <button id="trackBtn" (click)="goStock(value)" [disabled]="!(value.length > 0) || !(value.length < 6)" mat-raised-button color="primary">Track Stock</button>
     </mat-card-content>
 
